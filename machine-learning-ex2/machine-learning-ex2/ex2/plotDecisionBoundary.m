@@ -10,6 +10,12 @@ function plotDecisionBoundary(theta, X, y)
 
 % Plot Data
 plotData(X(:,2:3), y);
+
+disp("Trollololo!")
+disp(theta)
+disp(X)
+disp(y)
+
 hold on
 
 if size(X, 2) <= 3
@@ -25,7 +31,7 @@ if size(X, 2) <= 3
     % Legend, specific for the exercise
     legend('Admitted', 'Not admitted', 'Decision Boundary')
     axis([30, 100, 30, 100])
-else
+else %not working for test matrix!
     % Here is the grid range
     u = linspace(-1, 1.5, 50);
     v = linspace(-1, 1.5, 50);
