@@ -116,6 +116,14 @@ options = optimset('GradObj', 'on', 'MaxIter', 400);
 [theta, J, exit_flag] = ...
 	fminunc(@(t)(costFunctionReg(t, X, y, lambda)), initial_theta, options);
 
+disp("Debug===")
+
+disp(size(theta))
+disp(size(X))
+disp(size(y))
+
+disp("===Debug")  
+  
 % Plot Boundary
 plotDecisionBoundary(theta, X, y);
 hold on;

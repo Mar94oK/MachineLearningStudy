@@ -18,7 +18,17 @@ grad = zeros(size(theta));
 %               derivatives of the cost w.r.t. each parameter in theta
 
 
+H = sigmoid(X*theta); %this is simple HthetaTransposeX function!
+T = y.*log(H) + (1 - y).*log(1 - H); % this is like foreach since we are using '.*' multiplication
+J = -1/m*sum(T) + lambda/(2*m)*sum(theta(2:end).^2); %this is just like normal J and it's elaboration - but theta is used only for second and more theta.
 
+for i = 1 : m,
+	grad = grad + (H(i) - y(i)) * X(i,:)';
+end
+
+ta = [0;theta(2:end)];
+
+grad = 1/m*grad + lambda/m*ta;
 
 
 

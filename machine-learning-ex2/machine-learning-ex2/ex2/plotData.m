@@ -22,14 +22,15 @@ figure; hold on; %print everything on same graph, 'cause hold on
 %'MarkerSize', 7);
 
 positive = find(y==1); %shows all rows where y ==1
-negative = find(y==0); %shows all columns where y == 0 
+negative = find(y==0); %shows all rows where y == 0 
 
 disp(positive);
 
 plot(X(positive, 1),X(positive,2), "ok",'MarkerFaceColor', 'y','LineWidth', 1, 'MarkerSize', 7); % "ob" ---> circles, blue 
 plot(X(negative,1), X(negative,2), "^b", 'MarkerFaceColor', 'g','LineWidth', 1, 'MarkerSize', 7); % "*y" ---> stars, yellow; "^g" ---> green upper-faced triangles
 
-
+xlabel("First data column");
+ylabel("Second data column");
 
 
 

@@ -55,6 +55,8 @@ dataX = [ 0.3, 0.2, 0.5;
  positive = find(dataY==1);
  negative = find(dataY==0);
  
+ %this is incorrect plot using only first two columns of X!
+ %we can adjust it here for exmple using sum of first n parameters with resopect to last parameter and so on.
  plotData(dataX, dataY);
  
  
@@ -98,7 +100,24 @@ fprintf('theta: \n');
 fprintf(' %f \n', theta);
 
 % Plot Boundary - not working 17.04.2020 for matrix with n features > 2
+
+disp("Debug===")
+
+disp(size(theta))
+disp(size(dataXextenedwithOnes))
+disp(size(dataY))
+
+disp("===Debug")  
+
+
+%after we have theta ---> we actually have an equation to decide whether it is "positive" ot "negative" result
+%so can build with respect, for example third parameter!
+
+plotDataWithRespectToThird(dataXextenedwithOnes, dataY, theta);
+
+
 %plotDecisionBoundary(theta, dataXextenedwithOnes, dataY);
+
 
 %Prediction:
 disp("Prediction")

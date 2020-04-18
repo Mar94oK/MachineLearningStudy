@@ -36,6 +36,14 @@ else %not working for test matrix!
     u = linspace(-1, 1.5, 50);
     v = linspace(-1, 1.5, 50);
 
+    disp("Debug===")
+
+    disp(u)
+    disp(v)
+    disp(theta)
+
+    disp("===Debug")  
+    
     z = zeros(length(u), length(v));
     % Evaluate z = theta*x over the grid
     for i = 1:length(u)
@@ -43,6 +51,9 @@ else %not working for test matrix!
             z(i,j) = mapFeature(u(i), v(j))*theta;
         end
     end
+    
+    disp(z);
+    
     z = z'; % important to transpose z before calling contour
 
     % Plot z = 0
